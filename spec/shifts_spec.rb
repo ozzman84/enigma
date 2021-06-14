@@ -12,6 +12,7 @@ RSpec.describe Shift do
   it 'has readable attributes' do
     shift = Shift.new
     shift.create_key
+    shift.create_date
 
     expect(shift.key.length).to eq(5)
     expect(shift.date).to eq('140621')
