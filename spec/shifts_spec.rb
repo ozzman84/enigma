@@ -14,5 +14,6 @@ RSpec.describe Shift do
     shift.create_key
 
     expect(shift.key.length).to eq(5)
+    expect(shift.date).to eq('140621')
   end
 end
