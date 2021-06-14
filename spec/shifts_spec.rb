@@ -8,4 +8,11 @@ RSpec.describe Shift do
 
     expect(shift).to be_a(Shift)
   end
+
+  it 'has readable attributes' do
+    shift = Shift.new
+    shift.create_key
+
+    expect(shift.key.length).to eq(5)
+  end
 end
