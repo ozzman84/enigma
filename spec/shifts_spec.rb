@@ -20,26 +20,40 @@ RSpec.describe Shift do
 
   it 'can return key hash' do
   shift = Shift.new
-  key   = '02715'
+  shift.create_key
 
-  expect(shift.create_key_hash(key)).to eq(key_hash = {
-    A: 02,
-    B: 27,
-    C: 71,
-    D: 15
-  } )
+    expect(shift.create_key_hash).to eq(key_hash = {
+      A: 02,
+      B: 27,
+      C: 71,
+      D: 15
+    })
   end
 
   it 'can create offset hash' do
   shift = Shift.new
-  key   = '02715'
-  date  = '040895'
+  shift.create_date
 
-  expect(shift.create_offsets_hash(date)).to eq(offsets_hash = {
-    A: 1,
-    B: 0,
-    C: 2,
-    D: 5
-  } )
+    expect(shift.create_offsets_hash).to eq(offsets_hash = {
+      A: 1,
+      B: 0,
+      C: 2,
+      D: 5
+    })
+  end
+
+  it 'can return shift hash' do
+  shift = Shift.new
+  shift.create_key
+  shift.create_date
+  shift.create_key_hash
+  shift.create_offsets_hash
+
+    expect(shift.create_shift_hash).to eq(shift_hash = {
+      A: 3,
+      B: 27,
+      C: 73,
+      D: 20
+    })
   end
 end
