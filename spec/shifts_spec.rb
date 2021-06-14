@@ -17,4 +17,17 @@ RSpec.describe Shift do
     expect(shift.key.length).to eq(5)
     expect(shift.date).to eq('140621')
   end
+
+  it 'can return key hash' do
+  shift = Shift.new
+  key = '02715'
+
+  expect(shift.create_key_hash(key)).to eq(key_hash = {
+    A: 02,
+    B: 27,
+    C: 71,
+    D: 15
+  } )
+  # expect(shift.date).to eq('140621')
+  end
 end
