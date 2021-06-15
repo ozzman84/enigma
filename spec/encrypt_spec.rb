@@ -32,9 +32,6 @@ RSpec.describe Encrypt do
     encrypt = Encrypt.new('hello')
     shift_index = [10, 20, 0, 10]
 
-    expect(encrypt.new_index).to eq(['h', 'e', 'l', 'l', 'o'])
-    expect(encrypt.index).to eq([7, 4, 11, 11, 14])
-
-    encrypt2 = Encrypt.new('hello!')
+    expect(encrypt.sum_index).to eq([17, 24, 11, 21, 24])
   end
 end
