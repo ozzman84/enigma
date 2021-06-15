@@ -10,7 +10,7 @@ class Encrypt
     ("a".."z").to_a << " "
   end
 
-  def message_arr
+  def message_encryption
     @message.downcase.split('')
   end
 
@@ -24,10 +24,9 @@ class Encrypt
     arr = index.zip(@shift_index.cycle)
   end
 
-  def sum_index
-    sum = []
-    new_index.map do |x|
-      sum << x.reduce(:+)
+  def encrypt
+    sum = new_index.map do |x|
+      x.reduce(:+)
     end
     sum.map.with_index do |num|
       char[num]

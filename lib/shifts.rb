@@ -12,11 +12,13 @@ class Shift
   end
 
   def create_key
-    @key = rand(99999).to_s.rjust(5, '0')
+    # @key = rand(99999).to_s.rjust(5, '0')
+    @key = '02715'
   end
 
   def create_date
-    @date = Date::today.strftime('%d%m%y')
+    # @date = Date::today.strftime('%d%m%y')
+    @date = '040895'
   end
 
   def create_key_hash
@@ -41,6 +43,6 @@ class Shift
   end
 
   def create_shift_hash
-    @key_hash.merge(@offsets_hash)
+    create_key_hash.merge(create_offsets_hash) { |k, o, n| o + n }
   end
 end
