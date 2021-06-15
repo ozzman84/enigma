@@ -25,8 +25,12 @@ class Encrypt
   end
 
   def sum_index
+    sum = []
     new_index.map do |x|
-      x.reduce(:+)
+      sum << x.reduce(:+)
+    end
+    sum.map.with_index do |num|
+      char[num]
     end
   end
 end
