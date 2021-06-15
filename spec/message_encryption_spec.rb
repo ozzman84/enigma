@@ -1,7 +1,7 @@
 require 'shifts'
 require 'simplecov'
 require 'enigma'
-require 'message_encription'
+require 'message_encryption'
 SimpleCov.start
 
 RSpec.describe Encrypt do
@@ -21,7 +21,7 @@ RSpec.describe Encrypt do
   it 'can return the index position' do
     encrypt = Encrypt.new('Hello')
 
-    expect(encrypt.message_encription).to eq(['h', 'e', 'l', 'l', 'o'])
+    expect(encrypt.message_encryption).to eq(['h', 'e', 'l', 'l', 'o'])
     expect(encrypt.index).to eq([7, 4, 11, 11, 14])
   end
 

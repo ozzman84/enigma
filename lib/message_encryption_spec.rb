@@ -10,7 +10,7 @@ class Encrypt
     ("a".."z").to_a << " "
   end
 
-  def message_encription
+  def message_encryption
     @message.downcase.split('')
   end
 

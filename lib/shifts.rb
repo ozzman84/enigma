@@ -43,6 +43,6 @@ class Shift
   end
 
   def create_shift_hash
-    create_key_hash.merge(create_offsets_hash)
+    create_key_hash.merge(create_offsets_hash) { |k, o, n| o + n }
   end
 end
