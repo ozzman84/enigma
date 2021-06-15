@@ -9,7 +9,13 @@ class Encrypt
     ("a".."z").to_a << " "
   end
 
-  def message_values
+  def message_arr
     @message.downcase.split('')
+  end
+
+  def index
+    message_arr.map do |letter|
+      char.rindex(letter)
+    end
   end
 end
